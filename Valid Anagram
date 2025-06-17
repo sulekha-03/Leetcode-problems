@@ -1,0 +1,27 @@
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        char[] ss=s.toCharArray();
+        char[] tt=t.toCharArray();
+        if(s.length() != t.length()){
+            return false;
+        }
+        else{
+        for(int i=0;i<t.length();i++){
+            int flag=0;
+            for(int j=0;j<s.length();j++){
+                if(tt[i]==ss[j]){
+                    flag=1;
+                    ss[j]='1';
+                    break;
+                }
+
+            }
+            if(flag==0){
+                return false;
+            }
+        }
+        return true;
+        }
+        
+    }
+}
